@@ -12,7 +12,13 @@ module.exports = (sequelize, DataTypes) => {
       MediumUser.hasMany(models.MediumArticle, {
         as: 'authored',
         foreignKey: 'authorId'
-      })
+      }),
+
+      MediumUser.belongsToMany(models.MediumArticle, {
+        as: 'reading_list',
+        through: models.MediumReadingList,
+        foreignKey: 'userId'
+        })
     }
   }
   MediumUser.init(

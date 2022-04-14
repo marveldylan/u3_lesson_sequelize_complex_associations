@@ -4,6 +4,6 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "setup": "cd medium_clone && npm run setup && cd ../instagram_clone && npm run setup"
+    "setup": "npm install && npx sequelize db:create && npx sequelize db:migrate && npx sequelize db:seed:all"
   }
 }
